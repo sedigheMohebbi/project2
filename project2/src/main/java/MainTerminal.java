@@ -1,6 +1,4 @@
 import org.xml.sax.SAXException;
-import terminal.Terminal;
-import terminal.XmlParser;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;

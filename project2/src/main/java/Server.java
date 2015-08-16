@@ -1,5 +1,3 @@
-package server;
-
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -17,7 +15,7 @@ public class Server {
         InputStream inputStream=socket.getInputStream();
         DataInputStream dataInputStream=new DataInputStream(inputStream);
         String input=new String(dataInputStream.readUTF());
-        System.out.println(input+" server");
+        System.out.println(input+ "server");
         dataInputStream.close();
         inputStream.close();
         dataOutputStream.close();

@@ -1,5 +1,3 @@
-package terminal;
-
 import java.io.*;
 import java.net.Socket;
 
@@ -15,7 +13,7 @@ public class Terminal {
         InputStream inputStream=socket.getInputStream();
         DataInputStream dataInputStream=new DataInputStream(inputStream);
         String dataInput= new String(dataInputStream.readUTF());
-        System.out.println(dataInput +" terminal");
+        System.out.println(dataInput + "terminal");
         dataInputStream.close();
         inputStream.close();
         dataOutputStream.close();
