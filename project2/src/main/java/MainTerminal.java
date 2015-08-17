@@ -10,7 +10,11 @@ public class MainTerminal {
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         Terminal terminal=new Terminal();
         terminal.ConnectToServer();
-        XmlParser xmlParser=new XmlParser();
-        xmlParser.ParsXml();
+
+//        Terminal terminal1=new Terminal();
+//        terminal1.ConnectToServer();
+
+//        XmlParser xmlParser=new XmlParser();
+//        xmlParser.ParsXml();
     }
 }
