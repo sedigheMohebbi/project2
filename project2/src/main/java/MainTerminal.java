@@ -11,8 +11,7 @@ public class MainTerminal {
         Terminal terminal=new Terminal();
         terminal.ConnectToServer();
 
-//        Terminal terminal1=new Terminal();
-//        terminal1.ConnectToServer();
+
 
 //        XmlParser xmlParser=new XmlParser();
 //        xmlParser.ParsXml();

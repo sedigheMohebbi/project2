@@ -5,9 +5,13 @@ import java.net.Socket;
 
 
 public class ServerThread extends Thread {
+        private  Socket socket;
 
+    public ServerThread(Socket socket) {
+        this.socket = socket;
+    }
 
-    public void run(Socket socket) throws IOException {
+    public void run()  {
         try {
 
             InputStream inputStream = socket.getInputStream();
@@ -16,18 +20,22 @@ public class ServerThread extends Thread {
             System.out.println(st);
             OutputStream outputStream = socket.getOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            dataOutputStream.writeUTF("dar server neveshte shode ");
+            dataOutputStream.writeUTF("hello ");
             dataInputStream.close();
             outputStream.close();
             dataInputStream.close();
             inputStream.close();
-            Thread.sleep(1000);
+
 
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        socket.close();
+        try {
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
