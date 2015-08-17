@@ -1,10 +1,10 @@
+package server;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-/**
- * Created by Dotin School1 on 8/16/2015.
- */
+
 public class Server {
     public void ConnectionToTerminal() throws IOException {
         ServerSocket serverSocket= new ServerSocket(8080);
