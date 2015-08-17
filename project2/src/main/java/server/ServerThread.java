@@ -1,24 +1,29 @@
 package server;
+
 import java.io.*;
 import java.net.Socket;
-public class ServerTheared extends Thread {
+
+/**
+ * Created by Dotin School1 on 8/17/2015.
+ */
+public class ServerThread extends Thread {
     public void run(Socket socket) throws IOException {
-        OutputStream outputStream = socket.getOutputStream();
-        DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+        OutputStream outputStream=socket.getOutputStream();
+        DataOutputStream dataOutputStream=new DataOutputStream(outputStream);
         try {
             dataOutputStream.writeUTF("output : ");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        InputStream inputStream = socket.getInputStream();
-        DataInputStream dataInputStream = new DataInputStream(inputStream);
-        String input = null;
+        InputStream inputStream=socket.getInputStream();
+        DataInputStream dataInputStream=new DataInputStream(inputStream);
+        String input= null;
         try {
             input = new String(dataInputStream.readUTF());
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(input + "server");
+        System.out.println(input+ "server");
         try {
             dataInputStream.close();
         } catch (IOException e) {
