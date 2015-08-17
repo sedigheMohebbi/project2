@@ -3,9 +3,7 @@ package server;
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by Dotin School1 on 8/17/2015.
- */
+
 public class ServerThread extends Thread {
     public void run(Socket socket) throws IOException {
         OutputStream outputStream=socket.getOutputStream();
