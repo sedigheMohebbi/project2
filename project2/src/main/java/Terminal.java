@@ -12,7 +12,10 @@ public class Terminal {
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             String st = dataInputStream.readUTF();
             System.out.println(st);
-            Thread.sleep(10000);
+            for(int i=0;i<100;i++){
+             int in= dataInputStream.read();
+            System.out.println(in);}
+            Thread.sleep(1000);
             dataInputStream.close();
             inputStream.close();
             dataOutputStream.close();
@@ -23,4 +26,6 @@ public class Terminal {
         }
         socket.close();
     }
+
+
 }

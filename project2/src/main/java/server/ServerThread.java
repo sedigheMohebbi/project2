@@ -5,15 +5,14 @@ import java.net.Socket;
 
 public class ServerThread extends Thread {
     private Socket socket;
-
-
+    private static int a = 0;
 
     public ServerThread(Socket socket) {
         this.socket = socket;
 
     }
 
-    public void run() {
+    public void  run() {
 
         try {
 
@@ -24,13 +23,14 @@ public class ServerThread extends Thread {
             OutputStream outputStream = socket.getOutputStream();
 
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            dataOutputStream.writeUTF("hello "+ Thread.currentThread().getName());
+            dataOutputStream.writeUTF("hello " + Thread.currentThread().getName());
+
 
             dataInputStream.close();
             outputStream.close();
             dataInputStream.close();
             inputStream.close();
-         }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         try {
@@ -39,4 +39,5 @@ public class ServerThread extends Thread {
             e.printStackTrace();
         }
     }
+
 }
