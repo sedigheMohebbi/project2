@@ -3,15 +3,18 @@ package server;
 import java.io.*;
 import java.net.Socket;
 
-
 public class ServerThread extends Thread {
-        private  Socket socket;
+    private Socket socket;
+
+
 
     public ServerThread(Socket socket) {
         this.socket = socket;
+
     }
 
-    public void run()  {
+    public void run() {
+
         try {
 
             InputStream inputStream = socket.getInputStream();
@@ -19,16 +22,15 @@ public class ServerThread extends Thread {
             String st = dataInputStream.readUTF();
             System.out.println(st);
             OutputStream outputStream = socket.getOutputStream();
+
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            dataOutputStream.writeUTF("hello ");
+            dataOutputStream.writeUTF("hello "+ Thread.currentThread().getName());
+
             dataInputStream.close();
             outputStream.close();
             dataInputStream.close();
             inputStream.close();
-
-
-
-        } catch (Exception e) {
+         }catch (Exception e) {
             System.out.println(e.getMessage());
         }
         try {
@@ -36,8 +38,5 @@ public class ServerThread extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
-
 }

@@ -7,7 +7,7 @@ public class Terminal {
         try {
             OutputStream outputStream = socket.getOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            dataOutputStream.writeUTF("hi");
+            dataOutputStream.writeUTF("hi server ");
             InputStream inputStream = socket.getInputStream();
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             String st = dataInputStream.readUTF();
