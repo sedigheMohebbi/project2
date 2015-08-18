@@ -1,3 +1,5 @@
+package terminal;
+
 import terminal.Transaction;
 
 import java.io.*;
