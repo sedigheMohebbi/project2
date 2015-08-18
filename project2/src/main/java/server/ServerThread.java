@@ -6,13 +6,14 @@ import java.net.Socket;
 public class ServerThread extends Thread {
     private Socket socket;
     private static int a = 0;
+    private final Boolean ID=true;
 
     public ServerThread(Socket socket) {
         this.socket = socket;
 
     }
 
-    public void  run() {
+    public void run() {
 
         try {
 
@@ -24,7 +25,11 @@ public class ServerThread extends Thread {
 
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
             dataOutputStream.writeUTF("hello " + Thread.currentThread().getName());
-
+            int sum;
+            synchronized (ID) {
+                sum = sum();
+            }
+            dataOutputStream.writeInt(sum);
 
             dataInputStream.close();
             outputStream.close();
@@ -38,6 +43,16 @@ public class ServerThread extends Thread {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private int sum() throws InterruptedException {
+        int b ;
+        for (int i = 0; i < 100; i++) {
+            b = a + 1;
+            a = b;
+            Thread.sleep(50);
+        }
+        return a;
     }
 
 }
