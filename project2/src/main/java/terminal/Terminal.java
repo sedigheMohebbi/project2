@@ -73,7 +73,7 @@ public class Terminal {
     }
 
     public void ConnectToServer() throws IOException {
-        Socket socket = new Socket("localhost", 8080);
+        Socket socket = new Socket("localhost", port);
         try {
             OutputStream outputStream = socket.getOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
