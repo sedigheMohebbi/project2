@@ -33,7 +33,7 @@ public class XmlParser {
         Element outLog = (Element) terminal.getElementsByTagName("outLog").item(0);
         String path = outLog.getAttribute("path");
         Element transactions = (Element) terminal.getElementsByTagName("transactions").item(0);
-        List transactionsList = new ArrayList();
+        List<Transaction> transactionsList = new ArrayList();
         NodeList transactionsChildNodes = transactions.getChildNodes();
         for (int i = 0; i < transactionsChildNodes.getLength(); i++) {
             if (transactionsChildNodes.item(i).getNodeType() == Node.ELEMENT_NODE) {
@@ -50,8 +50,7 @@ public class XmlParser {
 
             }
         }
-        Terminal terminal1 = new Terminal(idTerminal, typeTerminal, path, ip, port, transactionsList);
-        return terminal1;
+        return new Terminal(idTerminal, typeTerminal, path, ip, port, transactionsList);
     }
 
 
