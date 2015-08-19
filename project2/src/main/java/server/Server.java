@@ -42,7 +42,7 @@ public class Server {
     }
 
     public void ConnectionToTerminal() throws IOException {
-        ServerSocket serverSocket = new ServerSocket(8080);
+        ServerSocket serverSocket = new ServerSocket(port);
         while(true){
 
         Socket socket = serverSocket.accept();
