@@ -75,6 +75,7 @@ public class Terminal {
     public void ConnectToServer() throws IOException {
         Socket socket = new Socket("localhost", port);
         try {
+            // terminal inja bayad darkhasto az tarighe suket befreste baraye server
             OutputStream outputStream = socket.getOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
             dataOutputStream.writeUTF("hi server ");

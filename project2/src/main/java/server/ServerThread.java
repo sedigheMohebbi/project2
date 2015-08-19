@@ -6,7 +6,7 @@ import java.net.Socket;
 public class ServerThread extends Thread {
     private Socket socket;
     private static int a = 0;
-    private final Boolean ID=true;
+    private final Boolean ID = true;
 
     public ServerThread(Socket socket) {
         this.socket = socket;
@@ -16,7 +16,6 @@ public class ServerThread extends Thread {
     public void run() {
 
         try {
-
             InputStream inputStream = socket.getInputStream();
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             String st = dataInputStream.readUTF();
@@ -25,11 +24,8 @@ public class ServerThread extends Thread {
 
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
             dataOutputStream.writeUTF("hello " + Thread.currentThread().getName());
-            int sum;
-            synchronized (ID) {
-                sum = sum();
-            }
-            dataOutputStream.writeInt(sum);
+
+
 
             dataInputStream.close();
             outputStream.close();
@@ -46,7 +42,7 @@ public class ServerThread extends Thread {
     }
 
     private int sum() throws InterruptedException {
-        int b ;
+        int b;
         for (int i = 0; i < 100; i++) {
             b = a + 1;
             a = b;
