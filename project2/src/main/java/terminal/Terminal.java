@@ -82,8 +82,6 @@ public class Terminal {
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             String st = dataInputStream.readUTF();
             System.out.println(st);
-            System.out.println(dataInputStream.readInt());
-            Thread.sleep(1000);
             dataInputStream.close();
             inputStream.close();
             dataOutputStream.close();
