@@ -54,10 +54,5 @@ public class XmlParser {
         return terminal1;
     }
 
-    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
-        XmlParser xmlParser = new XmlParser();
-        xmlParser.ParsXml();
 
-
-    }
 }
