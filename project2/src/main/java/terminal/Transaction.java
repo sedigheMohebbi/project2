@@ -1,8 +1,9 @@
 package terminal;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Transaction {
+public class Transaction implements Serializable {
     private int idTransaction;
 
     private enum TypeTransaction {
@@ -19,7 +20,11 @@ public class Transaction {
         this.idTransaction = idTransaction;
         this.amount = amount;
         this.deposit = deposit;
-        this.typeTransactionName =findEnum(type);
+        this.typeTransactionName = findEnum(type);
+    }
+
+    public TypeTransaction getTypeTransactionName() {
+        return typeTransactionName;
     }
 
     public int getIdTransaction() {
@@ -49,7 +54,7 @@ public class Transaction {
     public TypeTransaction findEnum(String type) {
         try {
             if (type.equals("deposit")) {
-               return TypeTransaction.deposit;
+                return TypeTransaction.deposit;
             }
             if (type.equals("withdraw")) {
                 return TypeTransaction.withdraw;

@@ -1,10 +1,13 @@
 package terminal;
 
+import jdk.nashorn.internal.ir.Flags;
 import terminal.Transaction;
 
 import java.io.*;
+import java.math.BigDecimal;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Terminal {
@@ -14,6 +17,7 @@ public class Terminal {
     private String ip;
     private int port;
     private List<Transaction> transactions;
+
 
     public Terminal(int id, String type, String path, String ip, int port, List<Transaction> transactions) {
         this.id = id;
@@ -75,23 +79,32 @@ public class Terminal {
     public void ConnectToServer() throws IOException {
         Socket socket = new Socket("localhost", port);
         try {
-            // terminal inja bayad darkhasto az tarighe suket befreste baraye server
-            OutputStream outputStream = socket.getOutputStream();
-            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-            dataOutputStream.writeUTF("hi server ");
             InputStream inputStream = socket.getInputStream();
             DataInputStream dataInputStream = new DataInputStream(inputStream);
-            String st = dataInputStream.readUTF();
-            System.out.println(st);
-            dataInputStream.close();
-            inputStream.close();
-            dataOutputStream.close();
-            outputStream.close();
+            OutputStream outputStream = socket.getOutputStream();
+            DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
 
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+            dataOutputStream.writeInt(transactions.size());
+            for (int i = 0; i < transactions.size(); i++) {
+                objectOutputStream.writeObject(transactions.get(i));
+                writeToFile("transaction Object ersal shod");
+                String message = dataInputStream.readUTF();
+                System.out.println(message);
+                writeToFile("pasokh az server daryaft shod");
+            }
+            dataOutputStream.writeUTF("end");
+            objectOutputStream.close();
+            outputStream.close();
+            socket.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        socket.close();
+    }
+
+    public void writeToFile(String str) throws IOException {
+        RandomAccessFile randomAccessFile = new RandomAccessFile(path, "rw");
+        randomAccessFile.writeUTF(str);
     }
 
 
