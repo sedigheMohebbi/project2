@@ -1,6 +1,9 @@
 package server;
 
+import exception.DepositTypeException;
+
 import java.math.BigDecimal;
+import java.util.DuplicateFormatFlagsException;
 
 public class Deposit {
     private String customer;
@@ -54,7 +57,7 @@ public class Deposit {
                 initialBalance = sum;
                 return sum;
             }
-            throw new Exception("The ceiling is higher transfer");
+            throw new DuplicateFormatFlagsException("قابل واریز نمی باشد");
         }
     }
 
@@ -66,6 +69,6 @@ public class Deposit {
                 return result;
             }
         }
-        throw new Exception("Insufficient funds.");
+        throw new DepositTypeException("قابل برداشت نمی باشد");
     }
 }

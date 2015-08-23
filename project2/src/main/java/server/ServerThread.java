@@ -40,6 +40,7 @@ public class ServerThread extends Thread {
                         dataOutputStream.writeUTF(" transaction deposit :id number" + id + " deposit number  " + deposit + " done");
                         server.writeToFile(" transaction deposit ba id" + id + " deposit number  " + deposit + " done.");
                     } catch (Exception e) {
+                        System.out.println(e.getMessage());
                         dataOutputStream.writeUTF(" transaction deposit : id number " + id + " deposit number " + deposit +
                                 " Failed");
                         server.writeToFile(" transaction deposit: id number " + id + " deposit Number : " + deposit + " Failed");
@@ -52,11 +53,13 @@ public class ServerThread extends Thread {
                         dataOutputStream.writeUTF(" transaction withdraw :id number" + id + " deposit number  " + deposit + " done");
                         server.writeToFile(" transaction withdraw id number" + id + " deposit number  " + deposit + " done");
                     } catch (Exception e) {
+                        System.out.println(e.getMessage());
                         dataOutputStream.writeUTF(" transaction withdraw :id number" + id + " deposit number  " + deposit + " Failed");
                         server.writeToFile(" transaction withdraw  id number " + id + " deposit Number : " + deposit + " Failed");
                     }
                 } else {
-                    throw new Exception("type transaction incorrect");
+                    throw new Exception
+                              ("type transaction incorrect");
                 }
             }
             dataInputStream.close();
