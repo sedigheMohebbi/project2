@@ -28,7 +28,7 @@ public class ServerThread extends Thread {
             int count = dataInputStream.readInt();
             for (int i = 0; i < count; i++) {
                 Transaction transaction = (Transaction) in.readObject();
-                int id = transaction.getIdTransaction();
+                int id = transaction.getTransactionId();
                 BigDecimal bigDecimalAmount = transaction.getAmount();
                 int deposit = transaction.getDeposit();
                 String type = String.valueOf(transaction.getTypeTransactionName());
@@ -38,7 +38,7 @@ public class ServerThread extends Thread {
                         dep.deposit(bigDecimalAmount);
 
                         dataOutputStream.writeUTF(" transaction deposit :id number" + id + " deposit number  " + deposit + " done");
-                        server.writeToFile(" transaction deposit ba id" + id +" deposit number  " + deposit + " done.");
+                        server.writeToFile(" transaction deposit ba id" + id + " deposit number  " + deposit + " done.");
                     } catch (Exception e) {
                         dataOutputStream.writeUTF(" transaction deposit : id number " + id + " deposit number " + deposit +
                                 " Failed");

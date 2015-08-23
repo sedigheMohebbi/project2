@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 public class Transaction implements Serializable {
-    private int idTransaction;
+    private int transactionId;
 
     private enum TypeTransaction {
         deposit,
@@ -16,8 +16,8 @@ public class Transaction implements Serializable {
     private TypeTransaction typeTransactionName;
 
 
-    public Transaction(int idTransaction, BigDecimal amount, int deposit, String type) {
-        this.idTransaction = idTransaction;
+    public Transaction(int transactionId, BigDecimal amount, int deposit, String type) {
+        this.transactionId = transactionId;
         this.amount = amount;
         this.deposit = deposit;
         this.typeTransactionName = findEnum(type);
@@ -27,12 +27,12 @@ public class Transaction implements Serializable {
         return typeTransactionName;
     }
 
-    public int getIdTransaction() {
-        return idTransaction;
+    public int getTransactionId() {
+        return transactionId;
     }
 
-    public void setIdTransaction(int idTransaction) {
-        this.idTransaction = idTransaction;
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
     }
 
     public BigDecimal getAmount() {
@@ -65,4 +65,5 @@ public class Transaction implements Serializable {
 
         return typeTransactionName;
     }
+
 }

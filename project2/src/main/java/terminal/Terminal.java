@@ -5,30 +5,34 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Terminal {
-    private int id;
+public class Terminal extends Thread {
+    private int terminalId;
     private String type;
-    private String path;
+    private String inputPath;
     private String ip;
     private int port;
     private List<Transaction> transactions;
 
 
-    public Terminal(int id, String type, String path, String ip, int port, List<Transaction> transactions) {
-        this.id = id;
+    public Terminal(int terminalId, String type, String inputPath, String ip, int port, List<Transaction> transactions) {
+        this.terminalId = terminalId;
         this.type = type;
-        this.path = path;
+        this.inputPath = inputPath;
         this.ip = ip;
         this.port = port;
         this.transactions = new ArrayList<Transaction>(transactions);
     }
 
-    public int getId() {
-        return id;
+    public Terminal(String inputPath) {
+        this.inputPath = inputPath;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getTerminalId() {
+        return terminalId;
+    }
+
+    public void setTerminalId(int terminalId) {
+        this.terminalId = terminalId;
     }
 
     public String getType() {
@@ -39,12 +43,12 @@ public class Terminal {
         this.type = type;
     }
 
-    public String getPath() {
-        return path;
+    public String getInputPath() {
+        return inputPath;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setInputPath(String inputPath) {
+        this.inputPath = inputPath;
     }
 
     public String getIp() {
@@ -71,7 +75,7 @@ public class Terminal {
         this.transactions = transactions;
     }
 
-    public void ConnectToServer() throws IOException {
+    public void connectToServer() throws IOException {
         Socket socket = new Socket("localhost", port);
         try {
 
@@ -97,12 +101,20 @@ public class Terminal {
             e.printStackTrace();
         }
     }
+
     public void writeToFile(String str) throws IOException {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(path, "rw");
+        RandomAccessFile randomAccessFile = new RandomAccessFile(inputPath, "rw");
         randomAccessFile.seek(randomAccessFile.length());
         randomAccessFile.writeBytes(str);
         randomAccessFile.writeBytes("\r\n");
     }
 
-
+    @Override
+    public void run() {
+        try {
+            connectToServer();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

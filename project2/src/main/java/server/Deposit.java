@@ -47,21 +47,25 @@ public class Deposit {
         this.upperBound = upperBound;
     }
 
-    public synchronized BigDecimal deposit(BigDecimal amount) throws Exception {
-        BigDecimal sum = amount.add(initialBalance);
-        if (sum.compareTo(upperBound) == -1) {
-            initialBalance = sum;
-            return sum;
+    public BigDecimal deposit(BigDecimal amount) throws Exception {
+        synchronized (this) {
+            BigDecimal sum = amount.add(initialBalance);
+            if (sum.compareTo(upperBound) == -1) {
+                initialBalance = sum;
+                return sum;
+            }
+            throw new Exception("The ceiling is higher transfer");
         }
-        throw new Exception("The ceiling is higher transfer");
     }
 
-    public synchronized BigDecimal withdraw(BigDecimal amount) throws Exception {
-        BigDecimal result = initialBalance.subtract(amount);
-        if (result.compareTo(BigDecimal.ZERO) != -1) {
-            initialBalance = result;
-            return result;
+    public BigDecimal withdraw(BigDecimal amount) throws Exception {
+        synchronized (this) {
+            BigDecimal result = initialBalance.subtract(amount);
+            if (result.compareTo(BigDecimal.ZERO) != -1) {
+                initialBalance = result;
+                return result;
+            }
         }
-        throw new Exception( "Insufficient funds.");
+        throw new Exception("Insufficient funds.");
     }
 }

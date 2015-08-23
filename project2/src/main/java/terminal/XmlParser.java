@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class XmlParser {
-    public Terminal ParseXml() throws ParserConfigurationException, IOException, SAXException {
+    public Terminal parseXml() throws ParserConfigurationException, IOException, SAXException {
 
         File file = new File("./terminal.xml");
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();

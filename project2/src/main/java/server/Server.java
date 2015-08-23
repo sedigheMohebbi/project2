@@ -10,7 +10,7 @@ import java.util.List;
 public class Server {
     private int port;
     private String outLog;
-    private List<Deposit> deposits=new ArrayList<Deposit>();
+    private List<Deposit> deposits = new ArrayList<Deposit>();
 
     public Server(int port, String outLog, List<Deposit> deposits) {
         this.port = port;
@@ -48,13 +48,14 @@ public class Server {
             System.out.println("Waiting for clients...");
             writeToFile("waiting for client");
             Socket socket = serverSocket.accept();
-            ServerThread serverThread = new ServerThread(socket,this);
+            ServerThread serverThread = new ServerThread(socket, this);
             serverThread.start();
         }
     }
+
     public Deposit findDeposit(int depositId) throws Exception {
-        for(int i=0;i<deposits.size();i++){
-            if(deposits.get(i).getId()==depositId){
+        for (int i = 0; i < deposits.size(); i++) {
+            if (deposits.get(i).getId() == depositId) {
                 writeToFile("No deposit is correct.");
                 return deposits.get(i);
             }
@@ -62,11 +63,13 @@ public class Server {
 
         throw new Exception("number of transaction deposit is incorrect");
     }
+
     public void writeToFile(String str) throws IOException {
-        RandomAccessFile randomAccessFile=new RandomAccessFile(outLog,"rw");
+        RandomAccessFile randomAccessFile = new RandomAccessFile(outLog, "rw");
         randomAccessFile.seek(randomAccessFile.length());
         randomAccessFile.writeBytes(str);
         randomAccessFile.writeBytes("\n");
+        randomAccessFile.close();
 
     }
 
