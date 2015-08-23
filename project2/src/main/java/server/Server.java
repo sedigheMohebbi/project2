@@ -59,7 +59,7 @@ public class Server {
                 return deposits.get(i);
             }
         }
-        writeToFile("No deposit is not correct.");
+
         throw new Exception("number of transaction deposit is incorrect");
     }
     public void writeToFile(String str) throws IOException {
