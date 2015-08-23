@@ -53,7 +53,7 @@ public class Deposit {
             initialBalance = sum;
             return sum;
         }
-        throw new Exception(" az saghfe enteghal bishtare");
+        throw new Exception("The ceiling is higher transfer");
     }
 
     public synchronized BigDecimal withdraw(BigDecimal amount) throws Exception {
@@ -62,6 +62,6 @@ public class Deposit {
             initialBalance = result;
             return result;
         }
-        throw new Exception("mojodi kafi nist");
+        throw new Exception( "Insufficient funds.");
     }
 }

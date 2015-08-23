@@ -37,25 +37,26 @@ public class ServerThread extends Thread {
                         Deposit dep = (server.findDeposit(deposit));
                         dep.deposit(bigDecimalAmount);
 
-                        dataOutputStream.writeUTF("tranaction deposit ba id" + id + "be shomare " + deposit + "anjam shod");
-                        server.writeToFile("tranaction deposit ba id" + id + "be shomare " + deposit + "anjam shod");
+                        dataOutputStream.writeUTF(" transaction deposit :id number" + id + " deposit number  " + deposit + " done");
+                        server.writeToFile(" transaction deposit ba id" + id +" deposit number  " + deposit + " done.");
                     } catch (Exception e) {
-                        dataOutputStream.writeUTF("tranaction deposit ba id" + id + "be shomare " + deposit + "anjam nashod");
-                        server.writeToFile("tranaction deposit ba id" + id + "be shomare " + deposit + "anjam nashod");
+                        dataOutputStream.writeUTF(" transaction deposit : id number " + id + " deposit number " + deposit +
+                                " Failed");
+                        server.writeToFile(" transaction deposit: id number " + id + " deposit Number : " + deposit + " Failed");
                     }
 
                 } else if (type.equals("withdraw")) {
                     try {
                         Deposit dep = (server.findDeposit(deposit));
                         dep.withdraw(bigDecimalAmount);
-                        dataOutputStream.writeUTF("tranaction withdraw ba id" + id + "be shomare " + deposit + "anjam shod");
-                        server.writeToFile("tranaction withdraw ba id" + id + "be shomare " + deposit + "anjam shod");
+                        dataOutputStream.writeUTF(" transaction withdraw :id number" + id + " deposit number  " + deposit + " done");
+                        server.writeToFile(" transaction withdraw id number" + id + " deposit number  " + deposit + " done");
                     } catch (Exception e) {
-                        dataOutputStream.writeUTF("tranaction withdraw ba id" + id + "be shomare " + deposit + "anjam nashod");
-                        server.writeToFile("tranaction withdraw ba id" + id + "be shomare " + deposit + "anjam nashod");
+                        dataOutputStream.writeUTF(" transaction withdraw :id number" + id + " deposit number  " + deposit + " Failed");
+                        server.writeToFile(" transaction withdraw  id number " + id + " deposit Number : " + deposit + " Failed");
                     }
                 } else {
-                    throw new Exception("type transaction mojod nist");
+                    throw new Exception("type transaction incorrect");
                 }
             }
             dataInputStream.close();

@@ -13,7 +13,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class JsonParser {
-    public Server parsJson() throws IOException, ParseException {
+    public Server parseJson() throws IOException, ParseException {
         FileReader reader = new FileReader("./core.json");
         JSONParser jsonParser = new JSONParser();
         JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);

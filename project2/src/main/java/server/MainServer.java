@@ -6,11 +6,8 @@ import java.io.IOException;
 
 public class MainServer {
     public static void main(String[] args) throws IOException, ParseException {
-        //        Server server = new Server();
-        //        server.ConnectionToTerminal();
-
         JsonParser jsonParser = new JsonParser();
-        Server server = jsonParser.parsJson();
+        Server server = jsonParser.parseJson();
         server.ConnectionToTerminal();
     }
 }

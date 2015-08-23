@@ -1,13 +1,8 @@
 package terminal;
 
-import jdk.nashorn.internal.ir.Flags;
-import terminal.Transaction;
-
 import java.io.*;
-import java.math.BigDecimal;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Terminal {
@@ -79,19 +74,20 @@ public class Terminal {
     public void ConnectToServer() throws IOException {
         Socket socket = new Socket("localhost", port);
         try {
+
             InputStream inputStream = socket.getInputStream();
             DataInputStream dataInputStream = new DataInputStream(inputStream);
             OutputStream outputStream = socket.getOutputStream();
             DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
-
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+            //Todo xml
             dataOutputStream.writeInt(transactions.size());
             for (int i = 0; i < transactions.size(); i++) {
                 objectOutputStream.writeObject(transactions.get(i));
-                writeToFile("transaction Object ersal shod");
+                writeToFile("send transaction Object");
                 String message = dataInputStream.readUTF();
                 System.out.println(message);
-                writeToFile("pasokh az server daryaft shod");
+                writeToFile("response from the server.");
             }
             dataOutputStream.writeUTF("end");
             objectOutputStream.close();
@@ -101,10 +97,11 @@ public class Terminal {
             e.printStackTrace();
         }
     }
-
     public void writeToFile(String str) throws IOException {
         RandomAccessFile randomAccessFile = new RandomAccessFile(path, "rw");
-        randomAccessFile.writeUTF(str);
+        randomAccessFile.seek(randomAccessFile.length());
+        randomAccessFile.writeBytes(str);
+        randomAccessFile.writeBytes("\r\n");
     }
 
 
