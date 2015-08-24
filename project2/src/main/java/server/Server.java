@@ -1,5 +1,8 @@
 package server;
 
+import exception.DepositNotFoundException;
+import exception.ServerIOException;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -42,35 +45,58 @@ public class Server {
         this.deposits = deposits;
     }
 
-    public void ConnectionToTerminal() throws IOException {
-        ServerSocket serverSocket = new ServerSocket(port);
-        while (true) {
-            System.out.println("Waiting for clients...");
-            writeToFile("waiting for client");
-            Socket socket = serverSocket.accept();
-            ServerThread serverThread = new ServerThread(socket, this);
-            serverThread.start();
+    public void connectionToTerminal() {
+        try {
+
+
+            ServerSocket serverSocket = new ServerSocket(port);
+            while (true) {
+                System.out.println("Waiting for clients...");
+                writeToFile("waiting for client");
+                Socket socket = serverSocket.accept();
+                ServerThread serverThread = new ServerThread(socket, this);
+                serverThread.start();
+            }
+        } catch (IOException e) {
+            try {
+                writeToFile("IO exception in server socket");
+            } catch (ServerIOException e1) {
+                System.err.println(e1.getMessage());
+            }
+
+        } catch (ServerIOException e) {
+            System.err.println(e.getMessage());
         }
     }
 
-    public Deposit findDeposit(int depositId) throws Exception {
+    public Deposit findDeposit(int depositId) throws DepositNotFoundException, ServerIOException {
         for (int i = 0; i < deposits.size(); i++) {
             if (deposits.get(i).getId() == depositId) {
-                writeToFile("No deposit is correct.");
+                writeToFile(" deposit Number " + depositId + " is correct.");
                 return deposits.get(i);
             }
         }
 
-        throw new Exception("number of transaction deposit is incorrect");
+        throw new DepositNotFoundException(" Deposit Id is incorrect " + "id :" + depositId);
     }
 
-    public void writeToFile(String str) throws IOException {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(outLog, "rw");
-        randomAccessFile.seek(randomAccessFile.length());
-        randomAccessFile.writeBytes(str);
-        randomAccessFile.writeBytes("\n");
-        randomAccessFile.close();
+    private static final Boolean lock = true;
 
+    public void writeToFile(String str) throws ServerIOException {
+        synchronized (lock) {
+            try {
+                RandomAccessFile randomAccessFile = new RandomAccessFile(outLog, "rw");
+                randomAccessFile.seek(randomAccessFile.length());
+                randomAccessFile.writeBytes(str);
+                randomAccessFile.writeBytes("\n");
+                randomAccessFile.close();
+            } catch (FileNotFoundException e) {
+                throw new ServerIOException("server log file not found", e);
+            } catch (IOException e) {
+                throw new ServerIOException("IO Exception in file", e);
+            }
+
+        }
     }
 
 

@@ -1,6 +1,7 @@
 package server;
 
-import exception.DepositTypeException;
+import exception.DepositTransactionException;
+
 
 import java.math.BigDecimal;
 import java.util.DuplicateFormatFlagsException;
@@ -50,18 +51,18 @@ public class Deposit {
         this.upperBound = upperBound;
     }
 
-    public BigDecimal deposit(BigDecimal amount) throws Exception {
+    public BigDecimal deposit(BigDecimal amount) throws DepositTransactionException {
         synchronized (this) {
             BigDecimal sum = amount.add(initialBalance);
             if (sum.compareTo(upperBound) == -1) {
                 initialBalance = sum;
                 return sum;
             }
-            throw new DuplicateFormatFlagsException("قابل واریز نمی باشد");
+            throw new DepositTransactionException("upper bound exceeded " + "Customer : " + customer + " id: " + id);
         }
     }
 
-    public BigDecimal withdraw(BigDecimal amount) throws Exception {
+    public BigDecimal withdraw(BigDecimal amount) throws DepositTransactionException {
         synchronized (this) {
             BigDecimal result = initialBalance.subtract(amount);
             if (result.compareTo(BigDecimal.ZERO) != -1) {
@@ -69,6 +70,6 @@ public class Deposit {
                 return result;
             }
         }
-        throw new DepositTypeException("قابل برداشت نمی باشد");
+        throw new DepositTransactionException("not enough balance" + " customer: " + customer + " id: " + id);
     }
 }
