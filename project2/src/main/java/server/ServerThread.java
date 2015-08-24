@@ -122,13 +122,6 @@ public class ServerThread extends Thread {
             e.printStackTrace();
         }
 
-
-        try {
-            socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
 }
