@@ -56,6 +56,8 @@ public class ServerThread extends Thread {
                         server.writeToFile(e.getMessage());
                     } catch (IOException e) {
                         server.writeToFile(e.getMessage());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
 
 
@@ -77,6 +79,8 @@ public class ServerThread extends Thread {
 
                     } catch (IOException e) {
                         server.writeToFile(e.getMessage());
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 } else {
                     throw new TransactionTypeIncorrectException("type transaction incorrect");

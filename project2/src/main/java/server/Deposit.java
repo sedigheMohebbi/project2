@@ -51,25 +51,31 @@ public class Deposit {
         this.upperBound = upperBound;
     }
 
-    public BigDecimal deposit(BigDecimal amount) throws DepositTransactionException {
-        synchronized (this) {
+    public BigDecimal deposit(BigDecimal amount) throws DepositTransactionException, InterruptedException {
+       // synchronized (this) {
+        if(Thread.currentThread().getName().equals("Thread-1")){
+            Thread.currentThread().sleep(100);
+        }
             BigDecimal sum = amount.add(initialBalance);
             if (sum.compareTo(upperBound) == -1) {
                 initialBalance = sum;
                 return sum;
             }
             throw new DepositTransactionException("upper bound exceeded " + "Customer : " + customer + " id: " + id);
-        }
+      //  }
     }
 
-    public BigDecimal withdraw(BigDecimal amount) throws DepositTransactionException {
-        synchronized (this) {
+    public BigDecimal withdraw(BigDecimal amount) throws DepositTransactionException, InterruptedException {
+       // synchronized (this) {
+            if(Thread.currentThread().getName().equals("Thread-1")){
+                Thread.currentThread().sleep(100);
+            }
             BigDecimal result = initialBalance.subtract(amount);
             if (result.compareTo(BigDecimal.ZERO) != -1) {
                 initialBalance = result;
                 return result;
             }
-        }
+        //}
         throw new DepositTransactionException("not enough balance" + " customer: " + customer + " id: " + id);
     }
 }

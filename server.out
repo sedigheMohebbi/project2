@@ -11,3 +11,481 @@ waiting for client
 end Thread-1
  transaction deposit: id number 4 deposit Number : 35527439 Failed
 end Thread-0
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-1
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-2
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-3
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-5
+end Thread-4
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+end Thread-1
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-1
+end Thread-0
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-0
+end Thread-1
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-2
+end Thread-3
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-5
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-4
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-7
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-6
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+end Thread-1
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-3
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-2
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ deposit Number 35527439 is correct.
+end Thread-5
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-4
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ deposit Number 35527439 is correct.
+end Thread-6
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-7
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-8
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-9
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-10
+end Thread-11
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-2
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-3
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-5
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-4
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-6
+end Thread-7
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-9
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-8
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-11
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-10
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-13
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-12
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-14
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-15
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-3
+end Thread-2
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-5
+end Thread-4
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-7
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-6
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-9
+end Thread-8
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-3
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-2
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-5
+end Thread-4
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 33227781 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-6
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-7
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-9
+end Thread-8
+waiting for client
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-0
+waiting for client
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-0
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-1
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-3
+end Thread-2
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw  id number 3 deposit Number : 33227781 Failed
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-5
+end Thread-4
+waiting for client
+waiting for client
+ deposit Number 33227781 is correct.
+ deposit Number 33227781 is correct.
+ transaction withdraw id number3 deposit number  33227781 done
+ transaction deposit ba id1 deposit number  33227781 done.
+ deposit Number 35527439 is correct.
+ transaction deposit: id number 4 deposit Number : 35527439 Failed
+end Thread-7
+ deposit Number 35527439 is correct.
+ transaction withdraw  id number 2 deposit Number : 35527439 Failed
+end Thread-6
